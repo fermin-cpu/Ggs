@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday with Message</title>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+    color: white;
+    margin: 0;
+  }
+
+  .glowing-box {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 10px;
+    background-image: linear-gradient(black, black),
+                      linear-gradient(to right, #4CAF50, #2196F3, #9C27B0);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 0 0 10px rgba(81, 203, 238, .5);
+    animation: rotate-border 5s linear infinite;
+    margin-bottom: 20px; /* Add space between box and button */
+  }
+
+  .glowing-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+    animation: fade 3s linear infinite;
+  }
+
+  @keyframes rotate-border {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 300% 0;
+    }
+  }
+
+  @keyframes fade {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  #message {
+    display: none;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .hidden {
+    display: none; /* Class to hide elements */
+  }
+</style>
+</head>
+<body>
+
+  <div class="glowing-box" id="glowingBox">
+    <div class="glowing-text">Happy Birthday</div>
+  </div>
+
+  <button onclick="showMessage()" id="clickButton">Click Me</button>
+
+  <div id="message">
+    <!-- Your birthday message goes here -->
+    Happy Birthday! I hope you have a fantastic day filled with joy and laughter.
+  </div>
+
+<script>
+  function showMessage() {
+    document.getElementById('glowingBox').classList.add('hidden');
+    document.getElementById('clickButton').classList.add('hidden');
+    document.getElementById('message').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
